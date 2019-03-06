@@ -9,7 +9,12 @@ function getRandomInt(min, max) {
 
 function renderTick(){
     const tick = document.querySelector('#tick')
-    tick.getElementsByClassName.display = 'block'
+    const answerBox = document.querySelector('#answer')
+    tick.style.display = 'block'
+    answerBox.style.display = 'none'
+    
+
+    
 }
 
 const p1 = document.createElement('p')
