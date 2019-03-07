@@ -34,9 +34,14 @@ let renderProblem = function(){
     p2.textContent = getRandomInt(min, max)
     document.querySelector('#num-1').appendChild(p1)
     document.querySelector('#num-2').appendChild(p2)
-    return(p1.textContent, p2.textContent)
+    
+    
+    
 }
 
+const focusTextBox = function() {           
+    document.getElementById("answer-input").focus();
+  }
 
 renderProblem()
 
@@ -51,6 +56,7 @@ document.querySelector('#answer').addEventListener('submit', function(e){
         renderTick()
         setTimeout(renderProblem, 2000)
         setTimeout(renderInput, 2000)
+        setTimeout(focusTextBox, 2000)
     }else{
         console.log('Wrong');
     }
