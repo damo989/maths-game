@@ -65,15 +65,17 @@ html {
       margin-top: 10px;
   }
 
-  #tick{
-    display: none; 
+  .tick{
     max-height: 150px;
     max-width: 150px;
+    content: url('tick.png')
       
   }
 
-  #cross{
-    background-image: 'cross.png';
-    min-width: 200px;
+  .cross{
+    width: 150px;
+    height: 150px;
+    content:url('cross.png');
+    
     
   }

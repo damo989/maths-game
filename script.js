@@ -21,23 +21,31 @@ function getRandomInt(min, max) {
   }
 
 function renderTick(){
-    const tick = document.querySelector('#tick')
+    const tick = document.getElementById('result')
     const answerBox = document.querySelector('#answer')
-    tick.style.display = 'block'
+    tick.classList.add('tick')
     answerBox.style.display = 'none' 
 }
 
 function renderCross(){
-    const tick = document.querySelector('#tick')
+    const cross = document.querySelector('#result')
     const answerBox = document.querySelector('#answer')
-    tick.style.display = 'block'
+    cross.classList.add('cross')
     answerBox.style.display = 'none' 
 }
 
 function renderInput(){
-    const tick = document.querySelector('#tick')
+    const tickOrCross = document.querySelector('#result')
     const answerBox = document.querySelector('#answer')
-    tick.style.display = 'none'
+    if (tickOrCross.classList.contains('tick')){
+        tickOrCross.classList.remove('tick')
+    }
+    else{
+        tickOrCross.classList.remove('cross')
+    }
+    //tickOrCross.classList.toggle('tick')
+    //tickOrCross.classList.toggle('cross')
+
     answerBox.style.display = 'block'
 }
 
@@ -96,7 +104,10 @@ document.querySelector('#answer').addEventListener('submit', function(e){
         setTimeout(renderInput, 2000)
         setTimeout(focusTextBox, 2000)
     }else{
-        console.log('Wrong');
+        renderCross()
+        setTimeout(renderProblem, 2000)
+        setTimeout(renderInput, 2000)
+        setTimeout(focusTextBox, 2000)
     }
     e.target.elements.checkAnswer.value = ''
 })
