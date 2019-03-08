@@ -27,6 +27,13 @@ function renderTick(){
     answerBox.style.display = 'none' 
 }
 
+function renderCross(){
+    const tick = document.querySelector('#tick')
+    const answerBox = document.querySelector('#answer')
+    tick.style.display = 'block'
+    answerBox.style.display = 'none' 
+}
+
 function renderInput(){
     const tick = document.querySelector('#tick')
     const answerBox = document.querySelector('#answer')

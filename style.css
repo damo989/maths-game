@@ -71,3 +71,9 @@ html {
     max-width: 150px;
       
   }
+
+  #cross{
+    background-image: 'cross.png';
+    min-width: 200px;
+    
+  }
