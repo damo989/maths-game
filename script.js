@@ -1,11 +1,18 @@
 let min = 1
-let max = 10
+let max = 11
 p1 = ''
 p2 = ''
 p1.textContent = ''
 p2.textContent = ''
 let symbol = ''
+numberArray = []
 
+function addNumbers(){
+    numberArray = []
+    numberArray.push(getRandomInt(min, max))
+    numberArray.push(getRandomInt(min, max))
+    numberArray.sort((a, b) => b - a);
+}
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -33,9 +40,9 @@ let renderProblem = function(){
     p2.textContent = ''// Resets random number otherwise they keep concatanating 
     p1 = document.createElement('p')
     p2 = document.createElement('p')
-
-    p1.textContent = getRandomInt(min, max)
-    p2.textContent = getRandomInt(min, max)
+    addNumbers()
+    p1.textContent = numberArray[0]
+    p2.textContent = numberArray[1]
     document.querySelector('#num-1').appendChild(p1)
     document.querySelector('#num-2').appendChild(p2)
     document.getElementById('symbol').textContent = symbol
@@ -44,7 +51,7 @@ let renderProblem = function(){
 
 const randomOnetoTwo = function(){
     minrn = Math.ceil(1);
-    maxrn = Math.floor(3);
+    maxrn = Math.floor(4);
     num = Math.floor(Math.random() * (maxrn - minrn)) + minrn; //The maximum is exclusive and the minimum is inclusive
     return num
 }
@@ -53,8 +60,12 @@ function symbolPicker(){
     num = randomOnetoTwo()
     if (num === 1){
         symbol = '+'
-    }else{
+    }else if (num === 2){
         symbol = "-"
+    }else if (num === 3){
+        symbol = "*"
+    }else if (num === 4){
+        symbol = "/"
     }
 }
 
